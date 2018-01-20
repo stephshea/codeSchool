@@ -1,0 +1,22 @@
+{
+  "name": "codeschool",
+  "version": "1.0.0",
+  "description": "codeschool mean practice",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stephshea/codeSchool.git"
+  },
+  "author": "Stephanie",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stephshea/codeSchool/issues"
+  },
+  "homepage": "https://github.com/stephshea/codeSchool#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
