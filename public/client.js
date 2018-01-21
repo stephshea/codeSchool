@@ -1,14 +1,14 @@
 /* global $ */
 $(function(){
    
-   $.get('/cities', appendToSelect);
+   $.get('/cities', appendToOptions);
    
-   function appendToSelect(cities) {
-       var cities = ['Providence', 'Boston', 'Dallas', 'Jacksonville'];
+   function appendToOptions(cities) {
+       var options = [];
        for( var i in cities) {
-           cities.push($('<option>', { text: cities[i] }));
+           options.push($('<option>', { text: cities[i] }));
        }
-       $('.cities').append(cities);
+       $('#cityOps').append(options);
    }
 
 });
