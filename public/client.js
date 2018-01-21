@@ -1,4 +1,5 @@
 /* global $ */
+$(document).ready(function() {
 $(function(){
    
    $.get('/cities', appendToOptions);
@@ -11,4 +12,5 @@ $(function(){
        $('#cityOps').append(options);
    }
 
+});
 });

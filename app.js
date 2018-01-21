@@ -22,22 +22,20 @@ app.get('/date', function(request, response) {
    response.send('It is ' +date);
 });
 
+app.get('/cities', function(request, response) {
+    var cities = ['Providence', 'Boston', 'Dallas', 'Jacksonville', 'Boise'];
+    
+    
+    response.json(cities);
+});
+
 // app.get('/cities', function(request, response) {
 //     response.sendFile(__dirname + '/public/index.html')
 // });
 
 app.use(express.static('public'));
 
-app.get('/cities', function(request, response) {
-    var cities = ['Providence', 'Boston', 'Dallas', 'Jacksonville'];
-    
-    // if(request.query.limit >=  0) {
-    //     response.json(cities.slice(0, request.query.limit));
-    // } else {
-    
-    response.json(cities);
-    // }
-});
+
+app.use(express.static('public'));
 
 app.listen(process.env.PORT);
-
