@@ -22,5 +22,16 @@ app.get('/date', function(request, response) {
    response.send('It is ' +date);
 });
 
+app.get('/cities', function(request, response) {
+    response.sendFile(__dirname + '/public/index.html')
+});
+
+app.use(express.static('public'));
+
+app.get('/cities', function(request, response) {
+    var cities = ['Providence', 'Boston', 'Dallas', 'Jacksonville'];
+    response.json(cities);
+});
+
 app.listen(process.env.PORT);
 
