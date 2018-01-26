@@ -1,16 +1,16 @@
 /* global $ */
 $(document).ready(function() {
-       $.get('/cities', appendToOptions);
+       $.get('/cities', appendToList);
    
-   function appendToOptions(cities) {
-       var options = [];
+   function appendToList(cities) {
+       var list = [];
        var content, city;
        for( var i in cities) {
            city = cities[i];
            content = '<a href="/cities/' +city+'">'+city+'</a> '+'<a href="#" data-city="'+city+'"><img src="del.jpg"></a>';
-           options.push($('<option>', { text: cities[i] }));
+           list.push($('<li>', { text: cities[i] }));
        }
-       $('#cityOps').append(options);
+       $('#cityOps').append(list);
    }
 });
 
@@ -25,7 +25,7 @@ $(function(){
            type: 'POST', url: '/cities', data: cityData
            
         }).done(function(cityName) {
-           appendToOptions([cityName]);
+           appendToList([cityName]);
            form.trigger('reset');
 });
 });

@@ -16,9 +16,9 @@ var cities = {
 };
 
 app.post('/cities', parseUrlencoded, function(request, response) {
-    if(request.body.newCity.length >=4 && request.body.newCity.state.length >=2){
-    var newCity = request.body;
-    
+    if(request.body.name.length >=4 && request.body.state.length >=2){
+    // var newCity = request.body;
+    var newCity = createCity(request.body.name, request.body.state);
     cities[newCity.name] = newCity.state;
     response.status(201).json(newCity.name);
 }
@@ -75,7 +75,7 @@ app.get('/cities/:name', function(request, response) {
 	// var city = name[0].toUpperCase() + name.slice(1).toLowerCase();
 	var state = cities[request.cityName];
 	if (!state) {
-		response.status(404).json("No city found" + request.params.name);
+		response.status(404).json(request.params.name + " not found");
 	} else {
 		response.json(state);
 	}
