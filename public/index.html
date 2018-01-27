@@ -8,12 +8,15 @@
 </head>
 <body>
 	<h1>Cities</h1>
-	<form>
-		<select id="cityOps">
-		</select>
+	<ul id="cityOps"></ul><!--    <form>-->
+	<!--        <select id="cityOps">-->
+	<!--</select>-->
+	<!--    </form>-->
+	<form id="addCity" name="addCity">
+		<legend>New City</legend> <input name="city" placeholder="City Name"><br>
+		<input name="state" placeholder="State"> <input type="submit">
 	</form>
-	<ul id='city-list'></ul>
-	<script src="https://code.jquery.com/jquery-3.3.0.min.js">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 	</script> 
 	<script src="client.js">
 	</script>
